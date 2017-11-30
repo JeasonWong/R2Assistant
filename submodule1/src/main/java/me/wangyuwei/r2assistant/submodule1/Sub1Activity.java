@@ -18,6 +18,9 @@ public class Sub1Activity extends AppCompatActivity {
     @BindView(R2.id.sub3)
     protected TextView vText3;
 
+    @BindView(R2.id.sub4)
+    protected TextView vText4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

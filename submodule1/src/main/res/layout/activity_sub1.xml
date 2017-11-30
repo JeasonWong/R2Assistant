@@ -23,5 +23,11 @@
         android:layout_height="wrap_content"
         android:text="sub1" />
 
+    <TextView
+        android:id="@+id/sub4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sub1" />
+
 
 </LinearLayout>
