@@ -1,4 +1,5 @@
 apply plugin: 'groovy'
+apply plugin: 'com.novoda.bintray-release'
 
 buildscript {
     repositories {
@@ -7,6 +8,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.novoda:bintray-release:0.3.4'
     }
 }
 
@@ -18,4 +20,13 @@ dependencies {
 
 repositories {
     jcenter()
+}
+
+publish {
+    userOrg = 'wangyuwei'
+    groupId = 'me.wangyuwei'
+    artifactId = 'r2assistant-plugin'
+    publishVersion = '1.0.0'
+    desc = 'a tool to generate R2.java\'s fields rapidly.'
+    website = 'https://github.com/JeasonWong/R2Assistant'
 }

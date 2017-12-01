@@ -11,6 +11,17 @@ R2Assistant is a tool to generate R2.java's fields rapidly.
 
 ```groovy
 apply plugin: 'me.wangyuwei.r2assistant'
+
+buildscript {
+    repositories {
+        maven {
+            url 'https://dl.bintray.com/wangyuwei/maven'
+        }
+    }
+    dependencies {
+        classpath 'me.wangyuwei:r2assistant-plugin:1.0.0'
+    }
+}
 ```
 
 ##### run command
