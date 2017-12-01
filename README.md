@@ -24,8 +24,8 @@ run `./gradlew sweepR2 -PmoduleName=${subModuleName}`
 #### TODO
 
 - ~~support add parameter to scan specified module.~~
-- support @BindViews.
-- support @OnClick.
+- support R2.string.
+- support R2.color.
 - ...
 
 
