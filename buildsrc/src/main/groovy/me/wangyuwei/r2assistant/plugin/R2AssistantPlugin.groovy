@@ -3,6 +3,7 @@ package me.wangyuwei.r2assistant.plugin
 import groovy.io.FileType
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.util.TextUtil
 
 import java.nio.charset.StandardCharsets
 import java.util.regex.Matcher
@@ -21,6 +22,13 @@ public class R2AssistantPlugin implements Plugin<Project> {
 
             doLast {
                 project.rootProject.allprojects.each { Project subProject ->
+
+                    String moduleName = getProperty(project, "moduleName")
+
+                    if (moduleName && moduleName != subProject.name) {
+                        return
+                    }
+
                     if (subProject.plugins.hasPlugin("com.android.library")) {
                         R2Log.log("start scan ${subProject.name}")
 
@@ -91,6 +99,13 @@ public class R2AssistantPlugin implements Plugin<Project> {
             return manifest."@package".text()
         }
         return ""
+    }
+
+    public def getProperty(Project project, String property) {
+        if (project.hasProperty(property)) {
+            return project.getProperties()[property];
+        }
+        return null;
     }
 
 }
