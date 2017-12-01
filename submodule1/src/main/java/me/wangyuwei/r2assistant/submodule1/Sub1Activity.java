@@ -5,15 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class Sub1Activity extends AppCompatActivity {
 
     @BindView(R2.id.sub1)
     protected TextView vText;
 
-    @BindView(R2.id.ttt)
-    protected TextView vText1;
+    @BindViews({R2.id.ttt, R2.id.ttt1})
+    protected TextView[] vText1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +25,10 @@ public class Sub1Activity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         vText.setText("success");
+    }
+
+    @OnClick({R2.id.eee, R2.id.www})
+    void onClick() {
+
     }
 }

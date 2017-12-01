@@ -3,17 +3,16 @@ package me.wangyuwei.r2assistant.plugin
 import groovy.io.FileType
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.util.TextUtil
 
 import java.nio.charset.StandardCharsets
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
-public class R2AssistantPlugin implements Plugin<Project> {
+import static me.wangyuwei.r2assistant.plugin.R2Constants.FIELD_R2_REGEX
+import static me.wangyuwei.r2assistant.plugin.R2Constants.FIELD_SRC_ID_REGEX
+import static me.wangyuwei.r2assistant.plugin.R2Constants.STR_CLASS_ID
 
-    private final def FIELD_R_REGEX = '''@BindView\\([ |\\n]*R2\\.id\\.([\\w]*)[ ]*\\)'''
-    private final def FIELD_R2_REGEX = '''@IdRes[\\s]*public static final int ([\\w]*) = *[\\w]*;'''
-    private final def STR_CLASS_ID = '''public static final class id {'''
+public class R2AssistantPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
@@ -41,7 +40,7 @@ public class R2AssistantPlugin implements Plugin<Project> {
                             if (file.toString().endsWith(".java")) {
                                 String fileContent = new String(file.bytes)
 
-                                Pattern p = Pattern.compile(FIELD_R_REGEX)
+                                Pattern p = Pattern.compile(FIELD_SRC_ID_REGEX)
                                 Matcher m = p.matcher(fileContent)
                                 while (m.find()) {
                                     srcFieldsSet.add(m.group(1))
