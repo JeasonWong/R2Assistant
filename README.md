@@ -5,6 +5,10 @@ when you use butterknife in sub module, once add a new resId in xml, you must re
 R2Assistant is a tool to generate R2.java's fields rapidly.
 
 
+#### SHOW
+
+![r2assistant.gif](http://ojafgwnc4.bkt.clouddn.com/r2assistant.gif)
+
 #### USAGE
 
 ##### add the plugin in app's build.gradle
