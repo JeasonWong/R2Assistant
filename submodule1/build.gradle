@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
-apply plugin: 'me.wangyuwei.r2assistant'
 
 android {
     compileSdkVersion 26

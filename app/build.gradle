@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.wangyuwei.r2assistant'
 
 android {
     compileSdkVersion 26

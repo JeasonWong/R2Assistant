@@ -9,17 +9,11 @@ import butterknife.ButterKnife;
 
 public class Sub1Activity extends AppCompatActivity {
 
-    @BindView( R2.id.sub1)
+    @BindView(R2.id.sub1)
     protected TextView vText;
 
-    @BindView(R2.id.sub2)
-    protected TextView vText2;
-
-    @BindView(R2.id.sub3)
-    protected TextView vText3;
-
-    @BindView(R2.id.sub4)
-    protected TextView vText4;
+    @BindView(R2.id.ttt)
+    protected TextView vText1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +23,5 @@ public class Sub1Activity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         vText.setText("success");
-
-        vText2.setText("1111");
-
     }
 }
